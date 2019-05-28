@@ -10,8 +10,8 @@ namespace SimpleChess
             var board = new Board();
             var bishop = new Piece("Bishop", "L");
             var rook = new Piece("Rook", "T");
-            board.Add("e4", bishop);
-            board.Add("f7", rook);
+            board.Set("e4", bishop);
+            board.Set("f7", rook);
             while (true)
             {
                 board.Show();
