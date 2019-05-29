@@ -7,8 +7,7 @@ namespace SimpleChess
         public string Symbol { get; }
         private readonly string _type;
 
-        public Piece(string
-            type, string symbol)
+        public Piece(string type, string symbol)
         {
             _type = type;
             Symbol = symbol;
