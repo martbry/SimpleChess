@@ -40,15 +40,20 @@ namespace SimpleChess
                     var top = (8 - row) * 3;
                     var fillChar = row % 2 == col % 2 ? ' ' : '█';
                     Write(5, fillChar, left, top);
-                    Write(2, fillChar, left, top + 1);
-                    var position = "" + col + row;
-                    var pieceChar = _pieces.ContainsKey(position) ? _pieces[position]?.Symbol : " ";
-                    Console.Write(pieceChar ?? " ");
-                    Write(2, fillChar);
+                    Write(1, fillChar, left, top + 1);
+                    Console.Write(GetPieceSymbol(col, row));
+                    Write(1, fillChar);
                     Write(5, fillChar, left, top + 2);
                 }
             Console.WriteLine();
             Console.WriteLine("   A    B    C    D    E    F    G    H");
+        }
+
+        private string GetPieceSymbol(char col, int row)
+        {
+            var position = "" + col + row;
+            if (!_pieces.ContainsKey(position) || _pieces[position] == null) return "   ";
+            return _pieces[position].Symbol;
         }
 
         private static void Write(int count, char c, int? left = null, int? top = null)
