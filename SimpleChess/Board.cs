@@ -51,6 +51,7 @@ namespace SimpleChess
 
         private string GetPieceSymbol(char col, int row)
         {
+            
             var position = "" + col + row;
             if (!_pieces.ContainsKey(position) || _pieces[position] == null) return "   ";
             return _pieces[position].Symbol;
